@@ -40,7 +40,7 @@
     <main>
         <section class="hero">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-btn btn">Заказать услугу</button>
+            <button data-modal-open type="button" class="hero-btn btn">Заказать услугу</button>
         </section>
 <section class="section features">
     <div class="container">
@@ -89,9 +89,17 @@
     <div class="container">
     <h2 class="section-title">Чем мы занимаемся</h2>
     <ul class="list">
-        <li class="occup-item"><img src="./images/occup/occup-1.jpg" alt="програмирование" width="370"></li>
-        <li class="occup-item"><img src="./images/occup/occup-2.jpg" alt="тестирование"  width="370"></li>
-        <li class="occup-item"><img src="./images/occup/occup-3.jpg" alt="дизайн"  width="370"></li>
+        <li class="occup-item"><img src="./images/occup/occup-1.jpg" alt="програмирование" width="370">
+        <div class="occup-thumb"><h3 class="occup-title">Десктопные приложения</h3></div>
+        </li>
+        <li class="occup-item"><img src="./images/occup/occup-2.jpg" alt="тестирование"  width="370">
+        <div class="occup-thumb">
+            <h3 class="occup-title">Мобильные приложения</h3>
+        </div></li>
+        <li class="occup-item"><img src="./images/occup/occup-3.jpg" alt="дизайн"  width="370">
+        <div class="occup-thumb">
+            <h3 class="occup-title">Дизайнерские решения</h3>
+        </div></li>
     </ul>
     </div>
 </section>
@@ -342,13 +350,24 @@
         <svg class="social-icon" width="20" height="20">
             <use href="./images/sprite.svg#icon-linkedin"></use>
         </svg>
-        <span class="visually-hidden">Linkedin</span></a
-    </a>
+        <span class="visually-hidden">Linkedin</span></a>
+    
 </li>
             </ul>
         </div>
         </div>
     </footer>
+    <div data-modal class="backdrop is-hidden">
+        <div class="modal">
+            <button data-modal-close class="btn-close">
+                <svg class="close-icon" width="11" height="11">
+                    <use href="./images/sprite.svg#icon-close"></use>
+                </svg>
+                <span class="visually-hidden">Закрыть</span></a>
+            </button>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
     
 </body>
 </html>

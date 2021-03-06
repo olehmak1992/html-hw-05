@@ -293,8 +293,39 @@ img {
 }
 
 .occup-item {
+  position: relative;
+
   width: 370px;
   margin: 15px;
+}
+
+.occup-thumb {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 70px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  opacity: 0;
+}
+
+.occup-title {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: 1.14;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.occup-item:hover .occup-thumb {
+  opacity: 1;
 }
 
 /* Team */
@@ -486,9 +517,53 @@ img {
   letter-spacing: 0.06em;
 }
 
-.products-item p {
+.item-desc {
   font-size: 16px;
   line-height: 1.88;
+}
+
+/* Overlay */
+
+.overlay-wrapper {
+  position: relative;
+}
+
+.overlay-wrapper::before {
+  content: '';
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: #fff;
+
+  opacity: 0;
+}
+
+.products-item:first-child:hover .overlay-wrapper::before,
+.products-item:first-child:hover .overlay {
+  opacity: 1;
 }
 
 /* Footer */
@@ -560,4 +635,58 @@ img {
 
 .join-item .social-icon {
   fill: #fff;
+}
+
+/* Modal */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+
+  width: 528px;
+  height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.btn-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+  border-color: var(--accent);
 }
