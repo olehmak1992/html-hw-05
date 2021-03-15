@@ -640,7 +640,12 @@ img {
   cursor: pointer;
 }
 
-.join-desc {
+.join-wrapper {
+  margin-right: 93px;
+}
+
+.join-desc,
+.subscribe-text {
   margin-bottom: 20px;
 
   color: #ffffff;
@@ -668,6 +673,24 @@ img {
 
 .join-item .social-icon {
   fill: #fff;
+}
+
+/* Subscribe form */
+
+.subscribe-form input[type='email'] {
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+  border-radius: 4px;
+}
+
+.subscribe-form input::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 /* Modal */
